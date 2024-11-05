@@ -3,11 +3,10 @@ package com.alexandermakunin.tema04;
 public class Ejercicio1 {
     public static String subirInicial(String texto){
         char letra = texto.charAt(0);
-        String bajar = String.valueOf(letra);
-        String bajado = bajar.toUpperCase();
+        String subir = String.valueOf(letra);
+        String subido = subir.toUpperCase();
         String sobrante = texto.substring(1);
-        String resultado = bajado.concat(sobrante);
-        return resultado;
+        return subido.concat(sobrante);
     }
 
     public static void main(String[] args) {
