@@ -1,5 +1,7 @@
 package com.alexandermakunin.tema05;
 
+//actividad a realizar: crea un programa que al pasarle una frase sube el inicial de la frase a mayusculas, ej: hola -> Hola
+
 public class Ejercicio1 {
     public static String subirInicial(String texto){
         char letra = texto.charAt(0);

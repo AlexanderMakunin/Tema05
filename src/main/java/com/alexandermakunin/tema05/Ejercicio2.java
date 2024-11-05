@@ -1,5 +1,7 @@
 package com.alexandermakunin.tema05;
 
+//actividad a realizar:
+
 public class Ejercicio2 {
     /**
      * contara las vocales que hay en el texto
@@ -33,14 +35,14 @@ public class Ejercicio2 {
         for (int i = 0; i <= array.length -1; i++){
             letra = array[i];
             switch (letra){
-                case 'b','c','d','f','g','h','j','k','l','m','n','p','q','r','s','t','v','w','x','y','z' -> cuentaConsonantes++;
+                case 'b','c','d','f','g','h','j','k','l','m','n','ñ','p','q','r','s','t','v','w','x','y','z' -> cuentaConsonantes++;
             }
         }
         return cuentaConsonantes;
     }
 
     public static void main(String[] args) {
-        String texto = "hoLa Que Talees";
+        String texto = "hoLa Que Taleeñs";
         System.out.println("En total hay: " + contadorVocales(texto)+ " vocales, y " +contadorConsonantes(texto) + " consonantes");
     }
 }
