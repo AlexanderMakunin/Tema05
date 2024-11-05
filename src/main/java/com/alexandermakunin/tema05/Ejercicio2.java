@@ -1,4 +1,4 @@
-package com.alexandermakunin.tema04;
+package com.alexandermakunin.tema05;
 
 public class Ejercicio2 {
     /**
