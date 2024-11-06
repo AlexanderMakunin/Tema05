@@ -112,7 +112,7 @@ public class Prueba {
             while (x>=1){
                 y=y*2;
                 if (y>=x){
-                    resultado = resultado+1;
+                    resultado = resultado+0;
                     x=y-x;
                     y=1;
                     //si quitas esta parte del codigo se queda en un bucle infinito
@@ -120,7 +120,7 @@ public class Prueba {
                         break;
                     }
                 } else {
-                    resultado = resultado+0;
+                    resultado = resultado+1;
                 }
             }
             System.out.printf("El resultado es: %s\n", resultado);
