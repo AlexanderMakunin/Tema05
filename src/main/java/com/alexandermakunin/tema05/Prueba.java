@@ -100,12 +100,39 @@ public class Prueba {
     /**
      * Aqui es donde iria decimal a binario
      */
-    public static void decimalBinario(){
-        //nada hecho aun
+
+    public static void decimalBinario() {
+        Scanner leer = new Scanner(System.in);
+        int x;
+        int y =1;
+        String resultado = "";
+        System.out.println("Pon un numero para pasarlo a binario");
+        x = Integer.parseInt(leer.nextLine());
+        if (x > 0) {
+            while (x>=1){
+                y=y*2;
+                if (y>=x){
+                    resultado = resultado+1;
+                    x=y-x;
+                    y=1;
+                    //si quitas esta parte del codigo se queda en un bucle infinito
+                    if (x<=1){
+                        break;
+                    }
+                } else {
+                    resultado = resultado+0;
+                }
+            }
+            System.out.printf("El resultado es: %s\n", resultado);
+            //nada hecho aun
+        } else{
+            System.out.println("El resultado es: " + x);
+        }
     }
-    /**
+    /*
      * Aqui es donde iria decimal a hexadecimal
      */
+
     public static void decimalHexadecimal(){
         //nada hecho aun
     }
@@ -137,6 +164,7 @@ public class Prueba {
     /**
      * Aqui es donde esta el sub menu de conversiones
      */
+
     public static void conversiones(){
         Scanner leer = new Scanner(System.in);
         int eleccion;
@@ -153,12 +181,12 @@ public class Prueba {
             System.out.println("Elija una opción:");
             eleccion = Integer.parseInt(leer.nextLine());
             switch (eleccion){
-                case 1 ->suma();
-                case 2 ->restar();
-                case 3 ->multiplicar();
-                case 4 ->dividir();
-                case 5 ->dividirRestos();
-                case 6 ->dividirRestos();
+                case 1 ->decimalBinario();
+                case 2 ->decimalHexadecimal();
+                case 3 ->binarioDecimal();
+                case 4 ->binarioHexadecimal();
+                case 5 ->hexadecimalBinario();
+                case 6 ->hexadecimalDecimal();
             }
         }while (eleccion != 0);
     }
