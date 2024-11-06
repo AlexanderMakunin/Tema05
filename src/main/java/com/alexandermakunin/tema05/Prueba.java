@@ -108,26 +108,16 @@ public class Prueba {
         String resultado = "";
         System.out.println("Pon un numero para pasarlo a binario");
         x = Integer.parseInt(leer.nextLine());
-        if (x > 0) {
-            while (x>=1){
-                y=y*2;
-                if (y>=x){
-                    resultado = resultado+0;
-                    x=y-x;
-                    y=1;
-                    //si quitas esta parte del codigo se queda en un bucle infinito
-                    if (x<=1){
-                        break;
-                    }
-                } else {
+            while (y<=x){
+                if (x <= y){
                     resultado = resultado+1;
+                } else {
+                    resultado = resultado+0;
                 }
+                x=x-y;
+                y=y*2;
             }
-            System.out.printf("El resultado es: %s\n", resultado);
-            //nada hecho aun
-        } else{
-            System.out.println("El resultado es: " + x);
-        }
+        System.out.println(resultado);
     }
     /*
      * Aqui es donde iria decimal a hexadecimal
