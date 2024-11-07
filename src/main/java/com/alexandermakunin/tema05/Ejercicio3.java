@@ -4,11 +4,12 @@ public class Ejercicio3 {
     /**
      * contara los espacios que hay en el texto
      * @param texto el texto
-     * @return devolvera la cantidad de espacios que hay en el texto
+     * @return devolvera la cantidad de palabras que hay en el texto
      */
-    public static int contadorEspacios(String texto){
+    public static int contadorPalabras(String texto){
         String bajado = texto.toLowerCase();
-        int cuentaEspacios = 0;
+        int cuentaEspacios = 1;
+        bajado = bajado.trim();
         char letra;
         char[] array = bajado.toCharArray();
         for (int i = 0; i <= array.length -1; i++){
@@ -22,6 +23,6 @@ public class Ejercicio3 {
 
     public static void main(String[] args) {
         String texto = "hoLa Que Talees";
-        System.out.println("En total hay: " + contadorEspacios(texto) + " espacios");
+        System.out.println("En total hay: " + contadorPalabras(texto) + " palabras");
     }
 }

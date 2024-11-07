@@ -23,8 +23,9 @@ public class Ejercicio8 {
         String texto = "hoLa Que Taleeñs";
         String bajado = texto.toLowerCase();
         String[] nombres = bajado.split("\\s+");
+        System.out.println("La palabra contiene: ");
         for (int j = 0; j < nombres.length; j++) {
-            System.out.println("La palabra: "+ nombres[j] + " contiene " + cuentaChar(nombres[j]));
+            System.out.printf("%-10s%-4s \n",nombres[j],cuentaChar(nombres[j]));
         }
     }
 }
