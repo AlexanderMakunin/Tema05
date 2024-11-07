@@ -44,5 +44,5 @@ public class Ejercicio4 {
         for (int j = 0; j < nombres.length; j++) {
             System.out.println("En total hay: " + contadorVocales(nombres[j]) + " vocales, y " + contadorConsonantes(nombres[j]) + " consonantes");
         }
-        }
     }
+}

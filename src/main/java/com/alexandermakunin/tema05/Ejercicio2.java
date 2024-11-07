@@ -16,7 +16,7 @@ public class Ejercicio2 {
         for (int i = 0; i <= array.length -1; i++){
             letra = array[i];
             switch (letra){
-                case 'a','e','i','o','u' -> cuentaVocales++;
+                case 'a','e','i','o','u','á','à','é','è','í','ì','ó','ò','ú','ù' -> cuentaVocales++;
             }
         }
         return cuentaVocales;
