@@ -1,0 +1,406 @@
+Index: src/main/java/com/alexandermakunin/tema05/Prueba.java
+===================================================================
+diff --git a/src/main/java/com/alexandermakunin/tema05/Prueba.java b/src/main/java/com/alexandermakunin/tema05/Prueba.java
+deleted file mode 100644
+--- a/src/main/java/com/alexandermakunin/tema05/Prueba.java	
++++ /dev/null	
+@@ -1,399 +0,0 @@
+-package com.alexandermakunin.tema05;
+-
+-import java.util.Scanner;
+-
+-public class Prueba {
+-    //primero que nada si no entendeis un culo escribidme que esto lo he acabado a las 12:21 y no he dormido un culo
+-    //y si veis fallos o veis que podeis mejorarlo pues adelante yo ya lo he hecho para que funcione al menos
+-    /**
+-     * Aqui es donde se hace la operacion de suma
+-     */
+-    public static void suma(){
+-        Scanner leer = new Scanner(System.in);
+-        int x,y,resultado;
+-        System.out.println("Pon un numero para sumar");
+-        x = Integer.parseInt(leer.nextLine());
+-        System.out.println("Pon un numero para sumar");
+-        y = Integer.parseInt(leer.nextLine());
+-        resultado = x+y;
+-        System.out.println("El resultado es: "+ resultado);
+-    }
+-    /**
+-     * Aqui es donde se hace la operacion de restar
+-     */
+-    public static void restar(){
+-        Scanner leer = new Scanner(System.in);
+-        int x,y,resultado;
+-        System.out.println("Pon un numero para restar");
+-        x = Integer.parseInt(leer.nextLine());
+-        System.out.println("Pon un numero para restar");
+-        y = Integer.parseInt(leer.nextLine());
+-        resultado = x-y;
+-        System.out.println("El resultado es: "+ resultado);
+-    }
+-    /**
+-     * Aqui es donde se hace la operacion de multiplicar
+-     */
+-    public static void multiplicar(){
+-        Scanner leer = new Scanner(System.in);
+-        int x,y,resultado;
+-        System.out.println("Pon un numero para multiplicar");
+-        x = Integer.parseInt(leer.nextLine());
+-        System.out.println("Pon un numero para multiplicar");
+-        y = Integer.parseInt(leer.nextLine());
+-        resultado = x*y;
+-        System.out.println("El resultado es: "+ resultado);
+-    }
+-    /**
+-     * Aqui es donde se hace la operacion de dividir
+-     */
+-    public static void dividir(){
+-        Scanner leer = new Scanner(System.in);
+-        int x,y,resultado;
+-        System.out.println("Pon un numero para dividir");
+-        x = Integer.parseInt(leer.nextLine());
+-        System.out.println("Pon un numero para dividir");
+-        y = Integer.parseInt(leer.nextLine());
+-        resultado = x/y;
+-        System.out.println("El resultado es: "+ resultado);
+-    }
+-
+-    /**
+-     * Aqui es donde se hace la operacion de divir y se muestre los restos
+-     */
+-    public static void dividirRestos(){
+-        Scanner leer = new Scanner(System.in);
+-        float x,y,resultado;
+-        System.out.println("Pon un numero para dividir");
+-        x = Integer.parseInt(leer.nextLine());
+-        System.out.println("Pon un numero para dividir");
+-        y = Integer.parseInt(leer.nextLine());
+-        resultado = x/y;
+-        System.out.println("El resultado es: "+ resultado);
+-    }
+-
+-    /**
+-     * Aqui es donde se realiza el sub menu de operaciones
+-     */
+-    public static void operaciones(){
+-        Scanner leer = new Scanner(System.in);
+-        int eleccion;
+-        do {
+-            System.out.println("*****************************\n" + "** OPERACIONES ARITMÉTICAS **\n" + "*****************************");
+-            System.out.println("1. Sumar");
+-            System.out.println("2. Restar");
+-            System.out.println("3. Multiplicar");
+-            System.out.println("4. Dividir");
+-            System.out.println("5. Resto de la división");
+-            System.out.println("--------------------------");
+-            System.out.println("0. Salir del programa\n");
+-            System.out.println("Elija una opción:");
+-            eleccion = Integer.parseInt(leer.nextLine());
+-            switch (eleccion){
+-                case 1 ->suma();
+-                case 2 ->restar();
+-                case 3 ->multiplicar();
+-                case 4 ->dividir();
+-                case 5 ->dividirRestos();
+-            }
+-        }while (eleccion != 0);
+-    }
+-
+-    /**
+-     * Aqui es donde iria decimal a binario
+-     */
+-
+-    public static void decimalBinario() {
+-        Scanner leer = new Scanner(System.in);
+-        int x;
+-        int y = 256;
+-        String resultado = "";
+-        System.out.println("Pon un numero decimal para pasarlo a binario");
+-        x = Integer.parseInt(leer.nextLine());
+-        if (x>=y){
+-            for (;x >= y;y=y*2);
+-        }
+-        for(; 0 < y; y = y/2) {
+-            System.out.println(y);
+-            System.out.println(x);
+-            System.out.println("------------");
+-            if (y <= x) {
+-                x = x - y;
+-                resultado = resultado + 1;
+-            } else {
+-                resultado = resultado + 0;
+-            }
+-        }
+-        System.out.println(resultado);
+-    }
+-    /*
+-     * Aqui es donde iria decimal a hexadecimal
+-     */
+-
+-    public static void decimalHexadecimal(){
+-        Scanner leer = new Scanner(System.in);
+-        float x;
+-        float y;
+-        float restos ;
+-        int letra;
+-        String resultado = "";
+-        System.out.println("Pon un numero decimal para pasarlo a hexadecimal");
+-        x = Integer.parseInt(leer.nextLine());
+-        y = x;
+-        while(y>1){
+-            y = y / 16;
+-            restos = y % 1;
+-            letra = (int) (restos * 16);
+-            if (letra>=15){
+-                //x = x-15;
+-                resultado = 'F' + resultado;
+-            }
+-            if (letra == 14){
+-                //x = x-14;
+-                resultado = 'E' + resultado;
+-            }
+-            if (letra == 13){
+-                //x = x-13;
+-                resultado = 'D' + resultado;
+-            }
+-            if (letra == 12){
+-                //x = x-12;
+-                resultado = 'C' + resultado;
+-            }
+-            if (letra == 11){
+-                //x = x-11;
+-                resultado = 'B' + resultado;
+-            }
+-            if (letra == 10){
+-                //x = x-10;
+-                resultado = 'A' + resultado;
+-            }
+-            if (letra <= 9){
+-                resultado = resultado + letra;
+-            }
+-        }
+-        System.out.println(resultado);
+-    }
+-
+-    /**
+-     * Aqui es donde iria binario a decimal
+-     */
+-    public static void binarioDecimal(){
+-        Scanner leer = new Scanner(System.in);
+-        String x;
+-        int y = 1;
+-        int i = 0;
+-        char num;
+-        int resultado = 0;
+-        System.out.println("Pon un numeros decimal para pasarlo a decimal");
+-        x = leer.nextLine();
+-        while(i<x.length()){
+-            i++;
+-            num = x.charAt(x.length()-i);
+-            if (num == '1'){
+-                resultado = resultado + y;
+-            }
+-            y = y * 2;
+-        }
+-        System.out.println(resultado);
+-    }
+-    /**
+-     * Aqui es donde iria binario a hexadecimal
+-     */
+-    public static void binarioHexadecimal(){
+-        Scanner leer = new Scanner(System.in);
+-        String x;
+-        int y = 1;
+-        int i = 0;
+-        char num;
+-        int resultado = 0;
+-        System.out.println("Pon un numeros binarios para pasarlo a hexadecimal");
+-        x = leer.nextLine();
+-        while(i<x.length()){
+-            i++;
+-            num = x.charAt(x.length()-i);
+-            if (num == '1'){
+-                resultado = resultado + y;
+-            }
+-            y = y * 2;
+-        }
+-        float i2;
+-        float restos ;
+-        int letra;
+-        String resultado2 = "";
+-        i2 = resultado;
+-        while(i2>1){
+-            i2 = i2 / 16;
+-            restos = i2 % 1;
+-            letra = (int) (restos * 16);
+-            if (letra>=15){
+-                //x = x-15;
+-                resultado2 = 'F' + resultado2;
+-            }
+-            if (letra == 14){
+-                //x = x-14;
+-                resultado2 = 'E' + resultado2;
+-            }
+-            if (letra == 13){
+-                //x = x-13;
+-                resultado2 = 'D' + resultado2;
+-            }
+-            if (letra == 12){
+-                //x = x-12;
+-                resultado2 = 'C' + resultado2;
+-            }
+-            if (letra == 11){
+-                //x = x-11;
+-                resultado2 = 'B' + resultado2;
+-            }
+-            if (letra == 10){
+-                //x = x-10;
+-                resultado2 = 'A' + resultado2;
+-            }
+-            if (letra <= 9){
+-                resultado2 = resultado2 + letra;
+-            }
+-        }
+-        System.out.println(resultado2);
+-        //junte las dos ultimas lol
+-    }
+-    /**
+-     * Aqui es donde iria hexadecimal a binario
+-     */
+-    public static void hexadecimalBinario(){
+-        Scanner leer = new Scanner(System.in);
+-        String x;
+-        char num;
+-        int y;
+-        int letra = 0;
+-        int resultado = 0;
+-        System.out.println("Pon hexadecimales para pasarlo a decimales");
+-        x = leer.nextLine();
+-        y = x.length();
+-        while(y>0){
+-            y--;
+-            num = x.charAt(y);
+-            switch (num){
+-                case 'F' -> resultado = resultado + 15 * (int)Math.pow(16, letra);
+-                case 'E' -> resultado = resultado + 14 * (int)Math.pow(16, letra);
+-                case 'D' -> resultado = resultado + 13 * (int)Math.pow(16, letra);
+-                case 'C' -> resultado = resultado + 12 * (int)Math.pow(16, letra);
+-                case 'B' -> resultado = resultado + 11 * (int)Math.pow(16, letra);
+-                case 'A' -> resultado = resultado + 10 * (int)Math.pow(16, letra);
+-                case '9' -> resultado = resultado + 9 * (int)Math.pow(16, letra);
+-                case '8' -> resultado = resultado + 8 * (int)Math.pow(16, letra);
+-                case '7' -> resultado = resultado + 7 * (int)Math.pow(16, letra);
+-                case '6' -> resultado = resultado + 6 * (int)Math.pow(16, letra);
+-                case '5' -> resultado = resultado + 5 * (int)Math.pow(16, letra);
+-                case '4' -> resultado = resultado + 4 * (int)Math.pow(16, letra);
+-                case '3' -> resultado = resultado + 3 * (int)Math.pow(16, letra);
+-                case '2' -> resultado = resultado + 2 * (int)Math.pow(16, letra);
+-                case '1' -> resultado = resultado + 1 * (int) Math.pow(16, letra);
+-                case '0' -> resultado = resultado + 0 * (int) Math.pow(16, letra);
+-            }
+-            letra++;
+-        }
+-        int j = 256;
+-        String resultado2 = "";
+-        if (resultado>=j){
+-            for (;resultado >= j;j=j*2);
+-        }
+-        for(; 0 < j; j = j/2) {
+-            if (j <= resultado) {
+-                resultado = resultado - j;
+-                resultado2 = resultado2 + 1;
+-            } else {
+-                resultado2 = resultado2 + 0;
+-            }
+-        }
+-        System.out.println(resultado2);
+-    }
+-
+-    /**
+-     * Aqui es donde iria hexadecimal a binario
+-     */
+-    public static void hexadecimalDecimal(){
+-        Scanner leer = new Scanner(System.in);
+-        String x;
+-        char num;
+-        int y;
+-        int letra = 0;
+-        int resultado = 0;
+-        System.out.println("Pon hexadecimales para pasarlo a decimales");
+-        x = leer.nextLine();
+-        y = x.length();
+-        while(y>0){
+-            y--;
+-            num = x.charAt(y);
+-            System.out.println(num);
+-            switch (num){
+-                case 'F' -> resultado = resultado + 15 * (int)Math.pow(16, letra);
+-                case 'E' -> resultado = resultado + 14 * (int)Math.pow(16, letra);
+-                case 'D' -> resultado = resultado + 13 * (int)Math.pow(16, letra);
+-                case 'C' -> resultado = resultado + 12 * (int)Math.pow(16, letra);
+-                case 'B' -> resultado = resultado + 11 * (int)Math.pow(16, letra);
+-                case 'A' -> resultado = resultado + 10 * (int)Math.pow(16, letra);
+-                case '9' -> resultado = resultado + 9 * (int)Math.pow(16, letra);
+-                case '8' -> resultado = resultado + 8 * (int)Math.pow(16, letra);
+-                case '7' -> resultado = resultado + 7 * (int)Math.pow(16, letra);
+-                case '6' -> resultado = resultado + 6 * (int)Math.pow(16, letra);
+-                case '5' -> resultado = resultado + 5 * (int)Math.pow(16, letra);
+-                case '4' -> resultado = resultado + 4 * (int)Math.pow(16, letra);
+-                case '3' -> resultado = resultado + 3 * (int)Math.pow(16, letra);
+-                case '2' -> resultado = resultado + 2 * (int)Math.pow(16, letra);
+-                case '1' -> resultado = resultado + 1 * (int) Math.pow(16, letra);
+-                case '0' -> resultado = resultado + 0 * (int) Math.pow(16, letra);
+-            }
+-            letra++;
+-        }
+-        System.out.println(resultado);
+-    }
+-
+-    /**
+-     * Aqui es donde esta el sub menu de conversiones
+-     */
+-
+-    public static void conversiones(){
+-        Scanner leer = new Scanner(System.in);
+-        int eleccion;
+-        do {
+-            System.out.println("*****************************\n" + "** CONVERSIONES DE BASE **\n" + "*****************************");
+-            System.out.println("1. De decimal a binario");
+-            System.out.println("2. De decimal a hexadecimal");
+-            System.out.println("3. De binario a decimal");
+-            System.out.println("4. De binario a hexadecimal");
+-            System.out.println("5. De hexadecimal a binario");
+-            System.out.println("6. De hexadecimal a decimal");
+-            System.out.println("--------------------------");
+-            System.out.println("0. Salir del programa\n");
+-            System.out.println("Elija una opción:");
+-            eleccion = Integer.parseInt(leer.nextLine());
+-            switch (eleccion){
+-                case 1 ->decimalBinario();
+-                case 2 ->decimalHexadecimal();
+-                case 3 ->binarioDecimal();
+-                case 4 ->binarioHexadecimal();
+-                case 5 ->hexadecimalBinario();
+-                case 6 ->hexadecimalDecimal();
+-            }
+-        }while (eleccion != 0);
+-    }
+-    public static void main(String[] args) {
+-        Scanner leer = new Scanner(System.in);
+-        int eleccion;
+-        do {
+-            System.out.println("*****************\n" + "** CALCULADORA **\n" + "*****************");
+-            System.out.println("1. Operaciones aritméticas");
+-            System.out.println("2. Conversiones de base");
+-            System.out.println("--------------------------");
+-            System.out.println("0. Salir del programa\n");
+-            System.out.println("Elija una opción:");
+-            eleccion = Integer.parseInt(leer.nextLine());
+-            if (eleccion == 1){
+-                operaciones();
+-            } else if (eleccion == 2) {
+-                conversiones();
+-            }
+-        }while (eleccion != 0);
+-    }
+-}

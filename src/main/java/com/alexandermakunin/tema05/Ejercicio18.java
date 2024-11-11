@@ -1,7 +1,6 @@
 package com.alexandermakunin.tema05;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
@@ -11,7 +10,7 @@ public class Ejercicio18 {
     /**
      * Recibe los numeros y los va sumando para luego separalos y sumar entre esos dos
      * @param numeros la fila de numeros
-     * @return la suma entre los dos numeros finales
+     * @return la suma entre los dos numeros finalesgit
      */
     public static int luckyNumber(String numeros){
         char numero;
