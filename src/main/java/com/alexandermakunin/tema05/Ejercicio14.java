@@ -22,7 +22,7 @@ public class Ejercicio14 {
         int y = 0;
         int z = 0;
         int terminar = 9;
-        for (int i = 0; z<terminar; i++) {
+        for (int i = 0; z<terminar || y < terminar || x<terminar || i <= terminar; i++) {
             String sustituirI = "";
             String sustituirX = "";
             String sustituirY = "";
