@@ -1,6 +1,6 @@
 //Aqui se mostrara el apartado del submenu de operaciones aritmeticas
 //(Este seguramente pa marcos)
-package Operaciones_aritméticas;
+package com.alexandermakunin.proyectoCalculadora.Operaciones_aritméticas;
 
 public class Operaciones_aritméticas {
     public static void main(String[] args) {

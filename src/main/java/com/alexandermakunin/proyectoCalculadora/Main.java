@@ -1,3 +1,5 @@
+package com.alexandermakunin.proyectoCalculadora;
+
 //Este sera el apartado principal
 //(Que haga algo el pobes)
 public class Main {

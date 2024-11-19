@@ -1,6 +1,6 @@
 //Aqui se mostrara el apartado del submenu de conversiones
 //(seguramente pa levi)
-package Conversiones_de_base;
+package com.alexandermakunin.proyectoCalculadora.Conversiones_de_base;
 
 public class Conversiones_de_base {
     public static void main(String[] args) {
