@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class Ejercicio5 {
     public static void main(String[] args) {
         Scanner leer = new Scanner(System.in);
+        int superaMedia = 0;
         System.out.println("Cuantas personas?");
         int cantidad = Integer.parseInt(leer.nextLine());
         float [] estaturas = new float[cantidad];
@@ -20,9 +21,10 @@ public class Ejercicio5 {
         float media = contador / estaturas.length;
         for (int i = 0; i < estaturas.length; i++){
             if (media <= estaturas[i]){
-                System.out.println("La estatura: "+(estaturas[i])+" supera la media");
+                superaMedia++;
             }
         }
-        System.out.println(media);
+        System.out.println("La media es: " + media);
+        System.out.println("Hay "+ superaMedia +" que supera la media");
     }
 }
