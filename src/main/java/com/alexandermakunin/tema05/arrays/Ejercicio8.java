@@ -1,6 +1,12 @@
 package com.alexandermakunin.tema05.arrays;
 
 public class Ejercicio8 {
+    /**
+     * Revisa si el num esta en el array
+     * @param array el array a recibir
+     * @param num el num a comprobar
+     * @return devuelve si lo contiene o no
+     */
     public static boolean comprobarNum(int [] array, double num){
         for (int i = 0; i < array.length;i++){
             if (num == array[i]){

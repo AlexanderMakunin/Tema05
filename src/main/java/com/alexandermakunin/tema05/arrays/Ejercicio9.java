@@ -5,7 +5,10 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Ejercicio9 {
-
+    /**
+     * Rellenar array con numeros aleatorios
+     * @param array es el array
+     */
     public static void crearArray(int[] array){
         Random aleatorio = new Random();
         for (int i = 0; i < array.length; i++){
@@ -13,10 +16,18 @@ public class Ejercicio9 {
         }
     }
 
+    /**
+     * Recibe un array y lo muestra
+     * @param array es el array
+     */
     public static void visualizarArray(int[] array){
         System.out.println(Arrays.toString(array));
     }
 
+    /**
+     * Recibe el array y muestra pares
+     * @param array es el array
+     */
     public static void visualizarPares(int[] array){
         for (int i = 0; i < array.length; i++){
             if (array[i] % 2 == 0){
@@ -25,6 +36,10 @@ public class Ejercicio9 {
         }
     }
 
+    /**
+     * Recibe un array y muestra los multiplos de 3
+     * @param array es el array
+     */
     public static void visualizarMultiplos3(int[] array){
         for (int i = 0; i < array.length; i++){
             if (array[i] % 3 == 0){
