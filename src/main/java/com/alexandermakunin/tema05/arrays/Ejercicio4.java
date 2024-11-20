@@ -1,4 +1,4 @@
-package com.alexandermakunin.tema05.array;
+package com.alexandermakunin.tema05.arrays;
 
 import java.util.Random;
 
