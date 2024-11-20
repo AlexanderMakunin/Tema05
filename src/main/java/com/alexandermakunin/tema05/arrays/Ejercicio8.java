@@ -1,7 +1,7 @@
 package com.alexandermakunin.tema05.arrays;
 
 public class Ejercicio8 {
-    public static boolean comprobarNum(int [] array, int num){
+    public static boolean comprobarNum(int [] array, double num){
         for (int i = 0; i < array.length;i++){
             if (num == array[i]){
                 return true;

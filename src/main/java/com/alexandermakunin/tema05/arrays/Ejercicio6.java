@@ -5,7 +5,10 @@ import java.util.Random;
 
 public class Ejercicio6 {
     public static float [] divisionArrays(int [] array1, int [] array2){
-        float [] arraySuma = new float[10];
+        if (array1.length != array2.length){
+            return null;
+        }
+        float [] arraySuma = new float[array1.length];
         for (int i = 0; i < array1.length;i++){
             arraySuma[i] = (float) array1[i] / array2[i];
         }
