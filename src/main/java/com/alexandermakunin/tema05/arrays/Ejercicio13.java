@@ -11,7 +11,6 @@ public class Ejercicio13 {
         for (int i = 0; i < V.length; i++){
             V[i] = aleatorio.nextInt(1,51);
         }
-        System.out.println(Arrays.toString(V));
         int[] P = new int[V.length];
         if (V.length >= 50){
             for (int i = 0; i < V.length;i++,i++){
