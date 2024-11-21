@@ -1,5 +1,6 @@
 package com.alexandermakunin.tema05.arrays;
 
+import java.util.Arrays;
 import java.util.Random;
 
 public class Ejercicio12 {
@@ -18,5 +19,6 @@ public class Ejercicio12 {
                 }
             }
         }
+        System.out.println(Arrays.toString(P));
     }
 }

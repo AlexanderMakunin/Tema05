@@ -5,22 +5,28 @@ import java.util.Random;
 
 public class Ejercicio13 {
     public static void main(String[] args) {
-        int[] V = new int[50];
+        int[] v = new int[50];
         StringBuilder sb = new StringBuilder();
+        sb.append("[");
         Random aleatorio = new Random();
-        for (int i = 0; i < V.length; i++){
-            V[i] = aleatorio.nextInt(1,51);
+        for (int i = 0; i < v.length; i++){
+            v[i] = aleatorio.nextInt(1,51);
         }
-        int[] P = new int[V.length];
-        if (V.length >= 50){
-            for (int i = 0; i < V.length;i++,i++){
-                    P[i] = V[i];
-                    for (int j = 0; j < i; j++,j++) {
-                        P[i] = P[i] + V[j];
-                    }
+        int[] p = new int[v.length];
+        System.out.println(Arrays.toString(v));
+        if (v.length >= 50){
+            for (int i = 0; i < v.length;i++){
+                System.out.println(v[i]);
+                p[i] = v[i];
+                if (p[i] % 2 == 0){
+                    sb.append(p[i]);
+                    sb.append(", ");
+                }
             }
-            sb.append(Arrays.toString(P).replaceAll(" 0"," Error"));
-            System.out.println(sb);
+            sb.append("]");
+            String texto = sb.toString();
+            texto = texto.replace(", ]","]");
+            System.out.println(texto);
         }
     }
 }
