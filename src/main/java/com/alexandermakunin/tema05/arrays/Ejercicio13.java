@@ -27,7 +27,11 @@ public class Ejercicio13 {
                     contador++;
                 }
             }
-            System.out.println(Arrays.toString(p));
+            if (p[contador-1] == 0) {
+                System.out.println("No se ha encontrado nada");
+            } else {
+                System.out.println(Arrays.toString(p));
+            }
         }
     }
 }
