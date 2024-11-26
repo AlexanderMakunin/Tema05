@@ -6,18 +6,25 @@ public class busquedaBinaria {
         int buscar = 20;
         int inicio = 0;
         int fin = array.length - 1;
+        boolean encontrado = false;
         while (inicio <= fin) {
             int medio = (inicio + fin) / 2;
 
             if (array[medio] == buscar) {
-                System.out.println("se ha encontrado");
+                encontrado = true;
+                break;
             }
 
             if (array[medio] < buscar) {
-                inicio = medio + 1; // Buscar en la mitad superior
+                inicio = medio + 1;
             } else {
-                fin = medio - 1; // Buscar en la mitad inferior
+                fin = medio - 1;
             }
+        }
+        if (!encontrado){
+            System.out.println("no esta en el array en numero buscado");
+        } else {
+            System.out.println("esta en el array");
         }
     }
 }
