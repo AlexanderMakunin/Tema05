@@ -6,9 +6,10 @@ public class busquedaBinaria {
         int buscar = 20;
         int inicio = 0;
         int fin = array.length - 1;
+        int medio;
         boolean encontrado = false;
         while (inicio <= fin) {
-            int medio = (inicio + fin) / 2;
+            medio = (inicio + fin) / 2;
 
             if (array[medio] == buscar) {
                 encontrado = true;
