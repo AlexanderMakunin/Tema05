@@ -1,6 +1,5 @@
 package com.alexandermakunin.tema05.arrays;
 
-import java.util.Arrays;
 import java.util.Random;
 
 public class Ejercicio14 {
@@ -9,16 +8,6 @@ public class Ejercicio14 {
         int numNY = 0;
         int j;
         int i;
-        /*
-        for (int i = 0; i < array.length; i++){
-            num = 0;
-            for (j = 'A'; j < 'Z' ; j++){
-                if (j == array[i] || array[i] == 'Ñ'){
-                    num++;
-                }
-            }
-        }
-         */
         for (j = 'A'; j <= 'Z' ; j++){
             num = 0;
             numNY = 0;
