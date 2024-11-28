@@ -1,5 +1,6 @@
 package com.alexandermakunin.tema05.Matrices;
 
+import java.util.Arrays;
 import java.util.Random;
 
 public class Ejercicio2 {
@@ -21,5 +22,14 @@ public class Ejercicio2 {
                 M[i][j] = V[i] * P[j];
             }
         }
+        // apartado de pruebas :3
+        /*
+        for (int[] fila : M) {
+            for (int columna : fila) {
+                System.out.print(columna + " ");
+            }
+            System.out.println("\n");
+        }
+         */
     }
 }

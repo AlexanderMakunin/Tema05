@@ -27,7 +27,7 @@ public class ordenacion {
             int j;
             aux = array[i];
             for (j = i-1; j >= 0; j--){
-                if (array[j] < aux) {
+                if (array[j] <= aux) {
                     break;
                 }
                 else if (array[j] >= aux){

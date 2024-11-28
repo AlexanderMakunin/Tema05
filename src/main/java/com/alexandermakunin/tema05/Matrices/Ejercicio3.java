@@ -16,31 +16,45 @@ public class Ejercicio3 {
     }
     public static void play (Ficha[][] tablero, Jugador turnoActual) {
         Scanner leerJugada = new Scanner(System.in);
-        System.out.println("Donde quieres poner la ficha?");
-        System.out.println("Indica fila");
-        int fila = Integer.parseInt(leerJugada.nextLine());
-        System.out.println("Indica columna");
-        int columna = Integer.parseInt(leerJugada.nextLine());
-        if (esJugadaValida(tablero, fila, columna)){
+        boolean comprobar;
+        String mesa = "";
+        do {
+            System.out.println("Donde quieres poner la ficha?");
+            System.out.println("Indica fila");
+            int fila = Integer.parseInt(leerJugada.nextLine());
+            System.out.println("Indica columna");
+            int columna = Integer.parseInt(leerJugada.nextLine());
+            if (esJugadaValida(tablero, fila, columna)){
+                comprobar = true;
 
+            } else {
+                comprobar = false;
+            }
+        } while (!comprobar);
+        /*
+        for (int[] fila : tablero){
+            for ()
         }
+        tableroToString();
+
+         */
 
 
     }
-    public static void reset (Ficha[][] tablero, Jugador turnoActual) {
-        tablero = new Ficha[3][3];
-        turnoActual = Jugador.PLAYER1;
+    public static void reset () {
+        Ficha[][] tablero = new Ficha[3][3];
+        Jugador turnoActual = Jugador.PLAYER1;
     }
-    enum Ficha {
+    public enum Ficha {
         O,X
     }
-    enum Jugador {
+    public enum Jugador {
         PLAYER1,PLAYER2
     }
     public static void main(String[] args) {
         Ficha[][] tablero = new Ficha[3][3];
         Jugador turnoActual = Jugador.PLAYER1;
-        reset(tablero,turnoActual);
+        reset();
         play(tablero,turnoActual);
     }
 }
