@@ -44,7 +44,7 @@ public class Ejercicio3 {
         System.out.println("Turno del jugador: " + turnoActual);
         do {
             System.out.println("Jugada?");
-            String posicion = leer.nextLine().toLowerCase();
+            String posicion = leer.nextLine().toUpperCase();
             valido = posicion.length() == 2;
             if (!valido) {
                 System.err.println("La longitud del texto debe ser de 2 caracteres.");
@@ -127,20 +127,36 @@ public class Ejercicio3 {
         return false;
     }
 
+    private static boolean tableroLleno (){
+        for (Ficha[] filas : tablero) {
+            for (Ficha ficha : filas) {
+                if (ficha.equals(Ficha.NONE)){
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
     public static void main(String[] args) {
         tablero = new Ficha[FILAS][COLUMNAS];
         leer = new Scanner(System.in);
         boolean partidaFinalizada = true;
         boolean hayGanador;
         reset();
+
         do{
             play();
             hayGanador = esJugadaGanadora(tablero, getFichaJugador(turnoActual));
             if (!hayGanador || !partidaFinalizada) {
                 turnoActual = siguienteTurno();
             }
-            partidaFinalizada = hayGanador;
+            boolean empate = !hayGanador || tableroLleno();
+            partidaFinalizada = hayGanador || empate;
         } while (!partidaFinalizada);
+        if (hayGanador) {
+            System.out.println("Ha ganado " + turnoActual);
+        }
     }
 
     private static Jugador siguienteTurno() {
