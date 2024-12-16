@@ -3,29 +3,50 @@ package com.alexandermakunin.tema05.Matrices;
 import java.util.Random;
 
 public class Ejercicio5 {
-    private static final int FILA = 8;
-    private static final int COLUMNA = 8;
-    private static casilla[][] mapa = new casilla[FILA][COLUMNA];
+    private static Celda[][] mapa;
+    private static Random aleatorio;
 
-    private enum casilla {
-        jugador,casillaVacia,T,X,N
-    }
+    private enum Celda {
+        VACIA(Config.SPRITE_VACIO),
+        NPC(Config.SPRITE_NPC),
+        OBSTACULO(Config.SPRITE_OBSTACULO),
+        TESORO(Config.SPRITE_TESORO),
+        JUGADOR(Config.SPRITE_JUGADOR),
+        EXCAVADO(Config.SPRITE_EXCAVADO),
+        HABILIDAD(Config.SPRITE_HABILIDAD);
 
-    private static void crearMapa (casilla[][] mapa){
-        for (int i = 0; i < mapa.length;i++){
-            for (int j = 0; j < mapa[i].length;i++){
-                mapa[i][j] = casilla.casillaVacia;
-            }
+        private String sprite;
+        Celda (String sprite) {
+            this.sprite = sprite;
+        }
+
+        @Override
+        public String toString() {
+            return sprite;
         }
     }
 
-    private static void rellenarMapa (casilla[][] mapa){
-        Random aleatorio = new Random();
-        int[][] casillaJugador = new int[1][1];
-        casillaJugador[0][1] = aleatorio.nextInt(0,9);
+    public static String mapaToString(Celda[][] mapa){
+        StringBuilder sb = new StringBuilder();
+        for (Celda[] fila : mapa){
+            for (Celda celda : fila){
+                sb.append(celda);
+            }
+            sb.append("\n");
+        }
+        return sb.toString();
     }
 
     public static void main(String[] args) {
-
+        mapa = new Celda[Config.FILAS][Config.COLUMNA];
+        aleatorio = new Random();
+        Celda[] celdas = Celda.values();
+        for (int i = 0; i < mapa.length;i++){
+            for (int j = 0; j < mapa[i].length;j++){
+                int indice = aleatorio.nextInt(celdas.length);
+                mapa[i][j] = celdas[indice];
+            }
+        }
+        System.out.println(mapaToString(mapa));
     }
 }

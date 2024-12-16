@@ -14,6 +14,7 @@ public class Ejercicio6 {
     }
     public static void main(String[] args) {
         Scanner leer = new Scanner(System.in);
+        int я = 0;
         System.out.println("Cuantos alumnos?");
         int alumnos = Integer.parseInt(leer.nextLine());
         System.out.println("Cuantas asignaturas?");
