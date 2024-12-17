@@ -1,19 +1,23 @@
 package com.alexandermakunin.tema05.Matrices;
 
 public class Config {
-    //Constantes de configuracion general
+    // Constantes de configuración general
     public static final int FILAS = 8;
-    public static final int COLUMNA = 8;
+    public static final int COLUMNAS = FILAS * 4;
     public static final int USOS_PICO = 3;
     public static final int CANTIDAD_OBSTACULOS = FILAS - 1;
-    public static final int CANTIDAD_NPC = FILAS * COLUMNA / 4;
+    public static final int CANTIDAD_NPC = Math.min(FILAS * COLUMNAS / 20, 4);
+    public static final int CANTIDAD_HABILIDADES = CANTIDAD_NPC;
 
-    //Constantes para sprites
+    // Constantes para sprites
     public static final String SPRITE_JUGADOR = "@";
-    public static final String SPRITE_OBSTACULO = "X";
+    public static final String SPRITE_OBSTACULO = "▓";
     public static final String SPRITE_NPC = "N";
-    public static final String SPRITE_TESORO = "1";
-    public static final String SPRITE_VACIO = " ";
+    public static final String SPRITE_TESORO = "T";
+    public static final String SPRITE_VACIA = " ";
     public static final String SPRITE_HABILIDAD = "?";
-    public static final String SPRITE_EXCAVADO = "*";
+    public static final String SPRITE_EXCAVADA = "*";
+
+
+
 }
