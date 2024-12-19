@@ -1,15 +1,21 @@
 plugins {
     id 'java'
+    id 'application'
 }
 
-group = 'com.alexandermakunin.tema04'
+group = 'com.alexandermakunin.tema05'
 version = '1.0-SNAPSHOT'
 
 repositories {
     mavenCentral()
 }
 
+application {
+    mainClassName = "com.alexandermakunin.tema05.Matrices.Ejercicio5"
+}
+
 dependencies {
+    implementation 'com.github.kwhat:jnativehook:2.2.2'
     testImplementation platform('org.junit:junit-bom:5.10.0')
     testImplementation 'org.junit.jupiter:junit-jupiter'
 }
